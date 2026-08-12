@@ -165,9 +165,9 @@ multimodal-emotion-ai/
 | Role         | Member            |
 | ------------ | ----------------- |
 | Project Lead | Jayvardhan Kamble |
-| Team Member  | Harshal Koot       |
-| Team Member  | Omkar Kshirsagar       |
-| Team Member  | Vinod Kokare       |
+| Team Member  | Harshal Koot      |
+| Team Member  | Omkar Kshirsagar  |
+| Team Member  | Vinod Kokare      |
 
 ## 🔮 Future Scope
 
