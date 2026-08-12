@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Emotion Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Header -->
+
+        <header class="dashboard-header">
+
+            <h1>🎭 Multimodal Emotion AI</h1>
+
+            <p>
+                Real-Time Emotion Recognition Dashboard
+            </p>
+
+        </header>
+
+
+        <!-- Main Content -->
+
+        <main class="dashboard-content">
+
+
+            <!-- Camera Section -->
+
+            <section class="camera-section">
+
+                <h2>📷 Live Camera</h2>
+
+                <div class="camera-box">
+
+                    <video
+                        id="camera"
+                        autoplay
+                        playsinline>
+                    </video>
+
+                    <div id="cameraMessage"
+                         class="camera-message">
+
+                        Camera is currently off.
+
+                    </div>
+
+                </div>
+
+
+                <!-- Camera Controls -->
+
+                <div class="camera-controls">
+
+                    <button
+                        id="startCamera"
+                        class="primary-button">
+
+                        ▶ Start Camera
+
+                    </button>
+
+
+                    <button
+                        id="stopCamera"
+                        class="secondary-button">
+
+                        ■ Stop Camera
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Emotion Section -->
+
+            <section class="emotion-section">
+
+                <h2>🧠 Emotion Analysis</h2>
+
+
+                <div class="emotion-card">
+
+                    <div class="emotion-icon"
+                         id="emotionIcon">
+
+                        ⏳
+
+                    </div>
+
+
+                    <h3 id="emotion">
+
+                        Waiting...
+
+                    </h3>
+
+
+                    <p class="confidence-label">
+
+                        Confidence
+
+                    </p>
+
+
+                    <div class="confidence-bar">
+
+                        <div
+                            id="confidenceBar"
+                            class="confidence-progress"
+                            style="width: 0%;">
+
+                        </div>
+
+                    </div>
+
+
+                    <p id="confidence">
+
+                        --
+
+                    </p>
+
+                </div>
+
+
+                <!-- Status -->
+
+                <div class="status-card">
+
+                    <span class="status-dot"></span>
+
+                    <span id="status">
+
+                        Camera inactive
+
+                    </span>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Information -->
+
+        <section class="info-section">
+
+            <h2>How It Works</h2>
+
+            <div class="info-grid">
+
+                <div class="info-card">
+
+                    <div class="info-icon">📷</div>
+
+                    <h3>Face</h3>
+
+                    <p>
+                        Camera captures facial expressions
+                        for emotion analysis.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">🎤</div>
+
+                    <h3>Voice</h3>
+
+                    <p>
+                        Voice analysis will be integrated
+                        in the next stage.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">📝</div>
+
+                    <h3>Text</h3>
+
+                    <p>
+                        Text emotion analysis will be
+                        integrated later.
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <div class="info-icon">🔀</div>
+
+                    <h3>Fusion</h3>
+
+                    <p>
+                        Multiple predictions will eventually
+                        be combined using multimodal fusion.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="{{ url_for('static', filename='js/camera.js') }}"></script>
+
+</body>
+
+</html>

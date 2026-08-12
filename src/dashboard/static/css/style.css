@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+
+/* ---------------- HOME PAGE ---------------- */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+.home-container {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.home-container h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+
+.subtitle {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+
+/* ---------------- BUTTONS ---------------- */
+
+button {
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+
+.primary-button {
+    background: #222;
+    color: white;
+}
+
+
+.secondary-button {
+    background: #ddd;
+    color: #222;
+
+    margin-left: 10px;
+}
+
+
+/* ---------------- DASHBOARD ---------------- */
+
+.dashboard-container {
+    width: 94%;
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 30px 0;
+}
+
+
+.dashboard-header {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.dashboard-header h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+
+.dashboard-header p {
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+/* ---------------- MAIN CONTENT ---------------- */
+
+.dashboard-content {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(300px, 1fr);
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* ---------------- CAMERA ---------------- */
+
+.camera-section,
+.emotion-section {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.camera-section h2,
+.emotion-section h2 {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* Camera container */
+
+.camera-box {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 450px;
+
+    background: #111;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* Actual video */
+
+#camera {
+
+    width: 100%;
+
+    height: 450px;
+
+    object-fit: cover;
+
+    display: none;
+}
+
+
+/* Message shown when camera is off */
+
+.camera-message {
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+
+/* Controls */
+
+.camera-controls {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+}
+
+
+/* ---------------- EMOTION CARD ---------------- */
+
+.emotion-card {
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 12px;
+
+    background: #f7f7f7;
+
+}
+
+
+.emotion-icon {
+
+    font-size: 70px;
+
+    margin-bottom: 15px;
+}
+
+
+.emotion-card h3 {
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.confidence-label {
+
+    color: #666;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* Confidence bar */
+
+.confidence-bar {
+
+    width: 100%;
+
+    height: 12px;
+
+    background: #ddd;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 10px;
+
+}
+
+
+.confidence-progress {
+
+    height: 100%;
+
+    background: #222;
+
+    transition: width 0.4s ease;
+
+}
+
+
+/* ---------------- STATUS ---------------- */
+
+.status-card {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    background: #f7f7f7;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+}
+
+
+.status-dot {
+
+    display: inline-block;
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #999;
+
+    margin-right: 8px;
+
+}
+
+
+/* ---------------- INFORMATION ---------------- */
+
+.info-section {
+
+    margin-top: 35px;
+
+}
+
+
+.info-section h2 {
+
+    margin-bottom: 20px;
+
+}
+
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.info-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+.info-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+.info-card h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.info-card p {
+
+    color: #666;
+
+    line-height: 1.5;
+
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 900px) {
+
+    .dashboard-content {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .info-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .home-container h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .camera-box {
+
+        min-height: 300px;
+
+    }
+
+
+    #camera {
+
+        height: 300px;
+
+    }
+
+
+    .info-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .secondary-button {
+
+        margin-left: 0;
+
+        margin-top: 10px;
+
+    }
+
+}
