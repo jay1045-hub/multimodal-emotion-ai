@@ -420,10 +420,24 @@ button:hover {
 
 
     .camera-box {
+    position: relative;
 
-        min-height: 300px;
+    width: 100%;
 
-    }
+    min-height: 450px;
+
+    background: #111;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
 
 
     #camera {
