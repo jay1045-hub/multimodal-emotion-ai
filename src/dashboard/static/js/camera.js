@@ -294,14 +294,48 @@ async function detectFace() {
         if (result.count > 0) {
 
             status.textContent =
-                `${result.count} face detected`;
+        `       ${result.count} face detected`;
+
+            const firstFace =
+                result.faces[0];
+
+            const detectedEmotion =
+                firstFace.emotion || "Unknown";
+
+            const detectedConfidence =
+                firstFace.confidence || 0;
+
+            const confidencePercent =
+                Math.round(
+                detectedConfidence * 100
+            );
+
+            emotion.textContent =
+                detectedEmotion;
+
+            confidence.textContent =
+        `       ${confidencePercent}%`;
+
+            confidenceBar.style.width =
+                `${confidencePercent}%`;
 
         } else {
 
             status.textContent =
                 "No face detected";
 
-        }
+            emotion.textContent =
+                "Waiting...";
+
+            emotionIcon.textContent =
+                "⏳";
+
+            confidence.textContent =
+                "--";
+
+            confidenceBar.style.width =
+                "0%";
+}
 
 
     } catch (error) {
@@ -392,11 +426,23 @@ function drawFaces(faces) {
             "18px Arial";
 
 
-        ctx.fillText(
-            "Face",
-            x,
-            Math.max(y - 8, 18)
+        const detectedEmotion =
+    face.emotion || "Unknown";
+
+    const detectedConfidence =
+        face.confidence || 0;
+
+    const confidencePercent =
+        Math.round(
+            detectedConfidence * 100
         );
+
+
+    ctx.fillText(
+        `${detectedEmotion} ${confidencePercent}%`,
+        x,
+        Math.max(y - 8, 18)
+    );
 
     });
 

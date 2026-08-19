@@ -1,3 +1,5 @@
+from services.emotion import EmotionDetector
+
 from flask import Flask, render_template, request, jsonify
 import cv2
 import numpy as np
@@ -10,6 +12,7 @@ app = Flask(__name__)
 # Create face detector
 face_detector = FaceDetector()
 
+emotion_detector = EmotionDetector()
 
 @app.route("/")
 def home():
@@ -74,12 +77,25 @@ def detect_face():
 
         for (x, y, w, h) in faces:
 
-            face_data.append({
-                "x": int(x),
-                "y": int(y),
-                "width": int(w),
-                "height": int(h)
-            })
+            # Crop the detected face
+            face = face_detector.crop_face(
+            frame,
+            (x, y, w, h)
+        )
+
+        # Predict emotion
+        prediction = emotion_detector.predict(
+            face
+        )
+
+        face_data.append({
+            "x": int(x),
+            "y": int(y),
+            "width": int(w),
+            "height": int(h),
+            "emotion": prediction["emotion"],
+            "confidence": prediction["confidence"]
+        })
 
 
         return jsonify({
